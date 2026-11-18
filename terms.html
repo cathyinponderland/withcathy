@@ -152,5 +152,35 @@ a{color:#1034a6}a:hover{color:#0d1c6d}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
 })();
 </script>
+<script>
+(function () {
+  var fired = {};
+  var thresholds = [25, 50, 75];
+  var ticking = false;
+  function check() {
+    var doc = document.documentElement;
+    var scrollTop = window.scrollY || doc.scrollTop;
+    var docHeight = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    var pct = (scrollTop / docHeight) * 100;
+    thresholds.forEach(function (t) {
+      if (!fired[t] && pct >= t) {
+        fired[t] = true;
+        if (window.rybbit) window.rybbit.event('scroll_depth', { percent: t });
+      }
+    });
+    if (thresholds.every(function (t) { return fired[t]; })) {
+      window.removeEventListener('scroll', onScroll);
+    }
+    ticking = false;
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(check);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
 </body>
 </html>
