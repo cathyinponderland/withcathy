@@ -26,8 +26,14 @@ a{color:#1034a6}a:hover{color:#0d1c6d}
 .wc-btn-gold{background:#efcb89;color:#3f2e28}.wc-btn-gold:hover{background:#efcb89;color:#3f2e28}
 .wc-step1{margin-top:192px}.wc-step2{margin-top:96px}
 @media (max-width:1100px){.wc-step1,.wc-step2{margin-top:0}}
-@media (max-width:760px){header button[data-open-chat]{display:none}}
 @media (max-width:620px){.wc-counts-grid{grid-template-columns:1fr !important}}
+.wc-nav-toggle{display:none}
+.wc-burger{display:none}
+@media (max-width:760px){
+  .wc-burger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;cursor:pointer;flex:0 0 auto}
+  .wc-nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;background:#ffffff;flex-direction:column;align-items:flex-start;gap:16px;padding:24px 32px;border-bottom:1px solid #c7d0f0;box-shadow:0 8px 16px rgba(13,28,109,0.08);z-index:20}
+  .wc-nav-toggle:checked ~ .wc-nav-links{display:flex !important}
+}
 </style>
 <style>[hidden]{display:none !important} html{scroll-behavior:smooth}</style>
 <script src="https://app.rybbit.io/api/script.js?siteId=5cf7d954d737" defer></script>
@@ -42,9 +48,11 @@ a{color:#1034a6}a:hover{color:#0d1c6d}
 
 <!-- HEADER -->
 <header style="background: #ffffff; border-bottom: 1px solid #c7d0f0">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; position: relative">
     <a href="#top" aria-label="With Cathy – home" style="display: flex; align-items: center; text-decoration: none"><img src="/withcathy-logo-for-light-bg.svg" alt="With Cathy" height="40"></a>
-    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; font-family: 'Lexend', sans-serif; font-size: 15px; font-weight: 600">
+    <input type="checkbox" id="wc-nav-toggle" class="wc-nav-toggle">
+    <label for="wc-nav-toggle" class="wc-burger" aria-label="Open menu"><svg width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><path d="M1 1 h24 M1 9 h24 M1 17 h24" fill="none" stroke="#0d1c6d" stroke-width="2.5" stroke-linecap="round"></path></svg></label>
+    <nav aria-label="Main" class="wc-nav-links" style="display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; font-family: 'Lexend', sans-serif; font-size: 15px; font-weight: 600">
       <a href="#method" style="text-decoration: none">The method</a>
       <a href="#offers" style="text-decoration: none">Work with me</a>
       <a href="#about" style="text-decoration: none">About</a>
@@ -52,6 +60,15 @@ a{color:#1034a6}a:hover{color:#0d1c6d}
     </nav>
   </div>
 </header>
+<script>
+(function () {
+  var toggle = document.getElementById('wc-nav-toggle');
+  if (!toggle) return;
+  document.querySelectorAll('.wc-nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { toggle.checked = false; });
+  });
+})();
+</script>
 
 <!-- HERO -->
 <section id="top" style="background: #ffffff; color: #0d1c6d; overflow: hidden">
