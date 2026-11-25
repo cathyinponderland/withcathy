@@ -12,6 +12,7 @@ A plain HTML/CSS site with no build step and no dependencies. Every page is a se
 | `privacy.html` | Privacy Policy |
 | `confidentialitate.html` | Politica de Confidențialitate |
 | `delivery-cancel.html` | Delivery, Return & Cancellation Policy |
+| `launch/index.html` | Launch planning sales page (withcathy.com/launch). Uses the main site's images, logos and legal pages. Its "Book a 20-minute fit call" buttons open a pop-up with the "Launch with Cathy" Google Calendar schedule and WhatsApp. |
 
 The current live site uses `/terms`, `/termeni`, `/privacy`, `/confidentialitate` and `/deliver-cancel` (no `.html`). Keep those URLs working when you deploy: either enable "clean URLs" on the host or add redirects (note the live slug is `deliver-cancel`, the file here is `delivery-cancel.html`).
 
