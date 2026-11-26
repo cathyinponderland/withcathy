@@ -8,6 +8,7 @@ A plain HTML/CSS site with no build step and no dependencies. Every page is a se
 |---|---|
 | `index.html` | Homepage: who Cathy is, and the two ways to work with her (links to /decide and /launch) |
 | `decide/index.html` | Decisions sales page (withcathy.com/decide): Make the Call, Decisive As Fuck, Steer with Certainty. This was the homepage until Nov 2026. |
+| `media/index.html` | Media page (withcathy.com/media): podcasts and awards, grouped into Business and Personal story, with trigger warnings. Pictures are `images/media-*`. |
 | `terms.html` | Terms & Conditions |
 | `termeni.html` | Termeni și Condiții |
 | `privacy.html` | Privacy Policy |
