@@ -7,7 +7,7 @@ A plain HTML/CSS site with no build step and no dependencies. Every page is a se
 | File | Page |
 |---|---|
 | `index.html` | Homepage: who Cathy is, and the two ways to work with her (links to /decide and /launch) |
-| `decide/index.html` | Decisions sales page (withcathy.com/decide): Make the Call, Decisive As Fuck, Steer with Certainty. This was the homepage until Nov 2026. |
+| `decide/index.html` | Decisions sales page (withcathy.com/decide): Make the Call, Decisive For Good, Steer with Certainty. This was the homepage until Nov 2026. |
 | `media/index.html` | Media page (withcathy.com/media): podcasts and awards, grouped into Business and Personal story, with trigger warnings. Pictures are `images/media-*`. |
 | `terms.html` | Terms & Conditions |
 | `termeni.html` | Termeni și Condiții |
@@ -29,7 +29,7 @@ Close: the × button, a click outside, or Esc.
 ## Still to do before launch
 
 - **Video**: the homepage has a placeholder block marked `[Video – placement to confirm]`. Replace it with the real video (`<video>` for a self-hosted MP4, or a YouTube/Vimeo embed).
-- **"Book Make the Call" / "Book Decisive As Fuck"** buttons currently jump to `#book`. Point them at checkout links if those exist.
+- **"Book Make the Call" / "Book Decisive For Good"** buttons currently jump to `#book`. Point them at checkout links if those exist.
 - Optional: add a favicon, Open Graph image and analytics.
 
 ## Deploying with Claude Code
